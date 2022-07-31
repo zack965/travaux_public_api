@@ -1,0 +1,225 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Travaux Public Api",
+        "description": "L5 Swagger OpenApi description",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/AllArticles": {
+            "get": {
+                "tags": [
+                    "Articles"
+                ],
+                "description": "Returns list of Articles",
+                "operationId": "9056c1ef480cc1f3bc3e4f7d7adbc8f3",
+                "responses": {
+                    "200": {
+                        "description": "Display a listing of projects."
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "/api/ArticlesOfProject/{project_id}": {
+            "get": {
+                "tags": [
+                    "Articles"
+                ],
+                "description": "Returns list of Articles of project",
+                "operationId": "bfe12d881ed3039481b7243a6e1b2a9d",
+                "parameters": [
+                    {
+                        "name": "project_id",
+                        "in": "path",
+                        "description": "Project id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Display a listing of projects."
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "/api/CreateArticle/{project_id}": {
+            "post": {
+                "tags": [
+                    "Articles"
+                ],
+                "summary": "Store new project",
+                "description": "Returns project data",
+                "operationId": "a72552930af192ec882ffa5e372103a3",
+                "parameters": [
+                    {
+                        "name": "project_id",
+                        "in": "path",
+                        "description": "Project id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {},
+                            "example": {
+                                "N_prix": "string",
+                                "article_name": "string",
+                                "quantité": 1,
+                                "prix_unitaire": 4,
+                                "unité": "string"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "/api/CreateProject": {
+            "post": {
+                "tags": [
+                    "Projects"
+                ],
+                "summary": "Store new project",
+                "description": "Returns project data",
+                "operationId": "0b5f8ce7b57bfe97832860979a95f01b",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {},
+                            "example": {
+                                "project_name": "string",
+                                "project_address": "string",
+                                "project_client_name": "string",
+                                "devise": "string"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "/api/UpdateProject/{project_id}": {
+            "put": {
+                "tags": [
+                    "Projects"
+                ],
+                "summary": "Store new project",
+                "description": "Returns project data",
+                "operationId": "dd104ab0cf8738954140a229a53e2a50",
+                "parameters": [
+                    {
+                        "name": "project_id",
+                        "in": "path",
+                        "description": "Project id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {},
+                            "example": {
+                                "project_name": "string",
+                                "project_address": "string",
+                                "project_client_name": "string",
+                                "devise": "string"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "/api/AllProjects": {
+            "get": {
+                "tags": [
+                    "Projects"
+                ],
+                "description": "Returns list of projects",
+                "operationId": "d8825994a2e6c3c1bcb129e7eccc37ad",
+                "responses": {
+                    "200": {
+                        "description": "Display a listing of projects."
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Projects",
+            "description": "API Endpoints of Projects"
+        },
+        {
+            "name": "Articles",
+            "description": "API Endpoints of Articles"
+        }
+    ]
+}
